@@ -23,8 +23,12 @@ dependencies {
     implementation("io.quarkus:quarkus-flyway")
     implementation("io.quarkus:quarkus-jdbc-postgresql")
 
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("io.quarkus:quarkus-junit5")
+    testImplementation("io.mockk:mockk:1.11.0")
+    testImplementation("org.amshove.kluent:kluent:1.64")
     testImplementation("io.rest-assured:rest-assured")
+    testImplementation("io.rest-assured:kotlin-extensions")
 }
 
 group = "org.aleh"
