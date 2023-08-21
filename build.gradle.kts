@@ -22,6 +22,8 @@ dependencies {
     implementation("io.quarkus:quarkus-resteasy")
     implementation("io.quarkus:quarkus-flyway")
     implementation("io.quarkus:quarkus-jdbc-postgresql")
+    implementation("io.quarkus:quarkus-hibernate-orm")
+    implementation("io.quarkus:quarkus-smallrye-openapi")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.6.20")
     testImplementation("io.quarkus:quarkus-junit5")

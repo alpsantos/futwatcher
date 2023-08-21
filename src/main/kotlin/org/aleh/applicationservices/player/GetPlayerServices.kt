@@ -1,8 +1,5 @@
 package org.aleh.applicationservices.player;
 
-//import jakarta.enterprise.context.ApplicationScoped
-//import jakarta.inject.Inject
-
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
 //import javax.enterprise.context.ApplicationScoped
