@@ -10,6 +10,7 @@ import io.restassured.RestAssured
 import io.restassured.http.ContentType
 import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.core.Response
+import org.aleh.applicationservices.dtos.PlayerResponseDto
 import org.aleh.applicationservices.player.CreatePlayerServices
 import org.aleh.applicationservices.player.GetPlayerServices
 import org.aleh.domain.Player
@@ -29,22 +30,14 @@ class PlayerControllerTest {
     @InjectMock
     private var createPlayerServices: CreatePlayerServices = mockk(relaxed = true)
 
-//    @Test
-//    fun testHelloEndpoint() {
-//        RestAssured.given()
-//            .`when`().get("/api/player?id=1")
-//            .then()
-//            .statusCode(200)
-//            .body(CoreMatchers.`is`("Hello RESTEasy"))
-//    }
-
     @Test
     fun `it should return a detailed player`() {
+
         val fakePlayer = Player(1, "name", Status.ACTIVE.ordinal, LocalDate.now())
 
         every {
             getPlayerServices.getPlayer(any())
-        } returns fakePlayer
+        } returns PlayerResponseDto(fakePlayer)
 
         RestAssured.given()
             .`when`()

@@ -2,6 +2,7 @@ package org.aleh.applicationservices.player;
 
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
+import org.aleh.applicationservices.dtos.PlayerResponseDto
 //import javax.enterprise.context.ApplicationScoped
 //import javax.inject.Inject
 import org.aleh.domain.Player
@@ -14,9 +15,9 @@ constructor(
     val playerRepository: PlayerRepository
 ) {
 
-    fun getPlayer(id: Int): Player? {
+    fun getPlayer(id: Int): PlayerResponseDto? {
         val player = playerRepository.getPlayer(id) ?: return null
-        return player
+        return PlayerResponseDto(player)
     }
 }
 

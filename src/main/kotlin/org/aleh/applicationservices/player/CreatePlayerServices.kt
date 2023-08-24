@@ -13,7 +13,8 @@ constructor(
     private val playerRepository: PlayerRepository
 ) {
     @Transactional
-    fun createPlayer(player: Player) {
+    fun createPlayer(id: Int) {
+        val player = Player(id)
         playerRepository.persist(player)
     }
 }
