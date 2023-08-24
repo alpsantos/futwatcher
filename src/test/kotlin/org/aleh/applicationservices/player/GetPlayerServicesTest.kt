@@ -23,7 +23,7 @@ class GetPlayerServicesTest {
 
     @Test
     fun `it should get player by id`() {
-        val fakePlayer = Player(1, "name",Status.ACTIVE.ordinal, LocalDate.now() )
+        val fakePlayer = Player(1, "name",Status.ACTIVE.ordinal, LocalDate.now())
 
         every { playerRepository.getPlayer(any()) } returns fakePlayer
 

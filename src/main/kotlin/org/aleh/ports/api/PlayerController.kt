@@ -37,7 +37,7 @@ constructor(
     @Produces(MediaType.APPLICATION_JSON)
     fun createPlayer(request: PlayerRequestDto): Response {
         return try {
-            val player = Player(request.id, request.name, 1, LocalDate.now())
+            val player = Player(request.id)
             createPlayerServices.createPlayer(player)
 
             Response.status(Response.Status.CREATED).build()
